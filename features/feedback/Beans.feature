@@ -25,3 +25,10 @@ Feature: Beans
     When I take "40" coffees
     And I fill the beans tank
     Then message "Ready" should be displayed
+
+  @priority-medium
+  Scenario: Bean level is displayed with a progress bar as beans are consumed by machine
+    Given the bean progress level is displayed
+    When I serve a coffee the progress bar should decrease
+    And I fill the beans tank
+    Then the progress bar should increase
